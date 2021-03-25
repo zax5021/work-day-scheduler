@@ -42,12 +42,8 @@ function renderSchedule() {
   for (var i=0; i < hourBlock.length; i++){
     var storageKey = $(hourBlock[i]).attr('id');
     var value = localStorage.getItem(storageKey);
-    if (value==="") {
-      return
-    } else {
-      $(hourBlock[i]).children('.description').val(value)
-    }
-  }}
+      $(hourBlock[i]).children('.description').val(value);
+    }}
 setInterval(formatBlocks, 1000);
   
 renderSchedule();
