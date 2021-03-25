@@ -4,7 +4,7 @@ var timeDisplayEl= document.getElementById("currentDay");
 var hourBlock= $(".container").children("div");
 var saveBtn = $('.saveBtn');
 
-
+console.log(hourBlock);
 
 
 displayTime()
@@ -13,7 +13,6 @@ function displayTime() {
     timeDisplayEl.textContent=rightNow;
     return rightNow
   };
-setInterval(displayTime, 1000);
 
 function formatBlocks() {
     for (var i=0; i < hourBlock.length; i++){
@@ -27,9 +26,7 @@ function formatBlocks() {
         }
         }}
 
-
 saveBtn.on('click', function(event) {
-
   
   var timeBlockEl = $(event.target).closest('.time-block');
   var text = timeBlockEl.children('textarea').val();
@@ -45,6 +42,6 @@ function renderSchedule() {
       $(hourBlock[i]).children('.description').val(value);
     }}
 setInterval(formatBlocks, 1000);
-  
+setInterval(displayTime, 1000); 
 renderSchedule();
 formatBlocks();
